@@ -44,7 +44,7 @@ function addManager() {
 
         {
             type: "number",
-            message: "What is your team manager's phone number? (10 digits no dashes or spaces)",
+            message: "What is your team manager's phone number?",
             name: "phone"
         },
     ])
@@ -189,7 +189,7 @@ function compileTeam() {
     htmlArray.push(htmlBeginning);
 
     for (let i = 1; i < team.length; i++) {
-        let object = `
+        let cardObj = `
         <div class="col d-flex justify-content-around">
         <div class="card mb-4" style="width: 18rem;">
                     <div class="card-body bg-info">
@@ -199,29 +199,29 @@ function compileTeam() {
                     <div class="bg-light">
                         <ul class="list-group m-3">
                             <li class="list-group-item">ID: ${team[i].id}</li>
-                            <li class="list-group-item">Email: ${team[i].email}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${team[i].email}">${team[i].email}</a></li>
         `;
         if (team[i].phone) {
-            object += `
+            cardObj += `
             <li class="list-group-item">${team[i].phone}</li></ul>
             `
         };
         if (team[i].github) {
-            object += `
+            cardObj += `
             <li class="list-group-item">GitHub: <a href="https://github.com/${team[i].github}">${team[i].github}</a></li></ul>
             `
         };
         if (team[i].school) {
-            object += `
+            cardObj += `
             <li class="list-group-item">School: ${team[i].school}</li></ul>
             `
         };
-        object += `
+        cardObj += `
         </div>
         </div>
         </div>
         `;
-        htmlArray.push(object);
+        htmlArray.push(cardObj);
     };
 
     const htmlEnd = `
