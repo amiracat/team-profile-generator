@@ -234,7 +234,7 @@ function compileTeam() {
 
     console.log("Team page has been created!");
 
-    fs.writeFile(`./src/team-profile.html`, htmlArray.join(""), function (err) {
+    fs.writeFile(`./dist/team-profile.html`, htmlArray.join(""), function (err) {
         
     });
 };
