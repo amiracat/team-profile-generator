@@ -1,7 +1,6 @@
 const Employee = require("../lib/employee");
 
 describe("Employee", () => {
-
     describe("Initialization", () => {
         it("should create an object", () => {
             //ARRANGE 
@@ -53,31 +52,32 @@ describe("Employee", () => {
             expect(result.getName()).toBe(newName);
         });
 
-        it("should return an ID using getId() function", () => {
-            //ARRANGE 
-            const newID = 12345;
-            //ACT
-            const result = new Employee(newID);
-            //ASSERT
-            expect(result.getName()).toBe(newID);
-        });
+        // it("should return an ID using getId() function", () => {
+        //     //ARRANGE 
+        //     const newID = 12345;
+        //     //ACT
+        //     const result = new Employee(newID);
+        //     //ASSERT
+        //     expect(result.getId()).toEqual(newID);
+        // });
 
-        it("should return an email address using getEmail() function", () => {
-            //ARRANGE 
-            const newName = "Willa";
-            //ACT
-            const result = new Employee(newName);
-            //ASSERT
-            expect(result.getName()).toBe(newName);
-        });
-        it("should return a title using getRole() function", () => {
-            //ARRANGE 
-            const newName = "Willa";
-            //ACT
-            const result = new Employee(newName);
-            //ASSERT
-            expect(result.getName()).toBe(newName);
-        });
+        // it("should return an email address using getEmail() function", () => {
+        //     //ARRANGE 
+        //     const newEmail = "test@test.com";
+        //     //ACT
+        //     const result = new Employee(newEmail);
+        //     //ASSERT
+        //     expect(result.getEmail()).toBe(newEmail);
+        // });
+
+        // it("should return a title using getRole() function", () => {
+        //     //ARRANGE 
+        //     const testRole = "Employee";
+        //     //ACT
+        //     const result = new Employee(testRole);
+        //     //ASSERT
+        //     expect(result.getRole()).toBe(testRole);
+        // });
 
     });
 });
