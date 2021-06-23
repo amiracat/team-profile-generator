@@ -1,62 +1,83 @@
-const Employee = require("../lib/Employee");
+const Employee = require("../lib/employee");
 
 describe("Employee", () => {
 
-
-    // describe("DayCare", () => {
-    //     describe("Initialization", () => {
-    //       it("should create an object with 'children' array, 'capacity' number, and 'ageLimit' number", () => {
-    //         const dayCare = new DayCare();
-    //         expect(dayCare).toEqual({ children: [], capacity: 3, ageLimit: 6 });
-    //       });
-    //     });
-
     describe("Initialization", () => {
-        it("should create an object with employee name, id, email", () => {
+        it("should create an object", () => {
             //ARRANGE 
-            const testInit = ["Hasan", 7, "hasan@git.git"];
-
             //ACT
-            const result = new Employee(testInit)
+            const testEmp = new Employee();
             //ASSERT
-            expect(result).toEqual(testInit);
+            expect(typeof (testEmp)).toEqual("object");
+        });
+
+        it("should set name", () => {
+            //ARRANGE 
+            const name = "Arnold";
+            //ACT
+            const testName = new Employee(name);
+            //ASSERT
+            expect(testName.name).toBe(name);
+
+        });
+
+        it("should set employee id", () => {
+            //ARRANGE 
+            const testID = 20;
+            //ACT
+            const result = new Employee("Pamela", testID);
+            //ASSERT
+            expect(result.id).toEqual(testID);
+
+        });
+
+        it("should set email", () => {
+            //ARRANGE 
+            const testEmail = "amiraholden@gmail.com";
+            //ACT
+            const result = new Employee("Georgia", 313, testEmail);
+            //ASSERT
+            expect(result.email).toBe(testEmail);
+
         });
 
     });
-    describe("name", () => {
-        it("should return name of employee", () => {
+
+    describe("Functions", () => {
+        it("should return a name using getName() function", () => {
             //ARRANGE 
-            const testString = "Hasan";
-
+            const newName = "Willa";
             //ACT
-            const testMe = new Employee(testString);
+            const result = new Employee(newName);
             //ASSERT
-            expect(testMe).toEqual(testString);
+            expect(result.getName()).toBe(newName);
         });
-        // it("should return number for employee id", () => {
-        //     const num = 108;
-        //     const obj = new Employee(num);
-        //     expect(obj.number).toEqual(true);
-        // });
-        // it("should default number to 0", () => {
 
-        //     const obj = new Employee();
-        //     expect(obj.number).toEqual(0);
-        // });
-        // it("should return email address of employee", () => {
-        //     const obj = new Employee(name);
+        it("should return an ID using getId() function", () => {
+            //ARRANGE 
+            const newID = 12345;
+            //ACT
+            const result = new Employee(newID);
+            //ASSERT
+            expect(result.getName()).toBe(newID);
+        });
 
-        //     expect(name in obj).toEqual(true);
-        // });
-        // it("should return phone number of employee", () => {
-        //     const obj = new Employee(name);
+        it("should return an email address using getEmail() function", () => {
+            //ARRANGE 
+            const newName = "Willa";
+            //ACT
+            const result = new Employee(newName);
+            //ASSERT
+            expect(result.getName()).toBe(newName);
+        });
+        it("should return a title using getRole() function", () => {
+            //ARRANGE 
+            const newName = "Willa";
+            //ACT
+            const result = new Employee(newName);
+            //ASSERT
+            expect(result.getName()).toBe(newName);
+        });
 
-        //     expect(name in obj).toEqual(true);
-        // });
-        // it("should prompt user to add another employee - either engineer, intern or finish building team", () => {
-        //     const obj = new Employee(name);
-
-        //     expect(name in obj).toEqual(true);
-        // });
     });
 });

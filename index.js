@@ -203,7 +203,7 @@ function compileTeam() {
         `;
         if (team[i].phone) {
             cardObj += `
-            <li class="list-group-item">${team[i].phone}</li></ul>
+            <li class="list-group-item">Office phone: ${team[i].phone}</li></ul>
             `
         };
         if (team[i].github) {
