@@ -3,7 +3,7 @@ const Employee = require("../lib/employee");
 
 describe("Manager", () => {
     describe("Initialization", () => {
-            it("should set manager phone", () => {
+        it("should set manager phone", () => {
             //ARRANGE 
             const testPhone = 6129999999;
             //ACT
@@ -24,15 +24,5 @@ describe("Manager", () => {
             //ASSERT
             expect(testMe).toBe(manager);
         });
-
-        // it("should return a title using getRole() function", () => {
-        //     //ARRANGE 
-        //     const testRole = "Manager";
-        //     //ACT
-        //     const result = new Manager(testRole);
-        //     //ASSERT
-        //     expect(result.getRole()).toBe(testRole);
-        // });
-
     });
 });

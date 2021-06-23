@@ -52,32 +52,35 @@ describe("Employee", () => {
             expect(result.getName()).toBe(newName);
         });
 
-        // it("should return an ID using getId() function", () => {
-        //     //ARRANGE 
-        //     const newID = 12345;
-        //     //ACT
-        //     const result = new Employee(newID);
-        //     //ASSERT
-        //     expect(result.getId()).toEqual(newID);
-        // });
+        it("should return id using getId() function", () => {
+            //ARRANGE
+            const testId = 12345;
+            const testEmployee = new Employee("Junior", testId, "junior@test.com", "Employee")
+            //ACT
+            const testMe = testEmployee.getId();
+            //ASSERT
+            expect(testMe).toBe(testId);
+        });
 
-        // it("should return an email address using getEmail() function", () => {
-        //     //ARRANGE 
-        //     const newEmail = "test@test.com";
-        //     //ACT
-        //     const result = new Employee(newEmail);
-        //     //ASSERT
-        //     expect(result.getEmail()).toBe(newEmail);
-        // });
+        it("should return an email address using getEmail() function", () => {
+            //ARRANGE
+            const testEmail = "test@test.com";
+            const testEmployee = new Employee("Test Person", 42, testEmail, "Employee")
+            //ACT
+            const testMe = testEmployee.getEmail();
+            //ASSERT
+            expect(testMe).toBe(testEmail);
+        });
 
-        // it("should return a title using getRole() function", () => {
-        //     //ARRANGE 
-        //     const testRole = "Employee";
-        //     //ACT
-        //     const result = new Employee(testRole);
-        //     //ASSERT
-        //     expect(result.getRole()).toBe(testRole);
-        // });
+        it("should return a title using getRole() function", () => {
+            //ARRANGE
+            const testRole = "Employee";
+            const testEmployee = new Employee("Julie", 31, "julie@test.com", testRole)
+            //ACT
+            const testMe = testEmployee.getRole();
+            //ASSERT
+            expect(testMe).toBe(testRole);
+        });
 
     });
 });
